@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About · Nicole Echague</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main data-page="about">
+  <section class="hero">
+    <div class="wrap about-grid">
+      <div class="portrait tilt">
+        <div class="frame"><img src="assets/nicole.jpg" alt="Portrait of Nicole Echague"></div>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">About</span>
+        <h1>Hi, I'm <em class="s">Nicole</em>.</h1>
+        <p class="hero-lede">I'm Nicole Jancelle Echague, based in Taguig City, Philippines, working with US teams. I build websites and the systems behind them in Salesforce and GoHighLevel, and I connect those systems to everything else through APIs.</p>
+        <p class="muted measure">I started in finance and data: market-data operations at the London Stock Exchange Group, then accounts payable and reconciliation for a distributor. That background is why I care about accuracy, clean data and documentation in every CRM I touch.</p>
+        <div class="btn-row"><a class="btn btn-primary magnetic" href="contact.html">Work with me</a><a class="btn btn-ghost" href="skills.html">See my skills</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">Experience</span><h2>Client <em class="s">engagements</em></h2>
+          <p class="muted measure">Click a role to see the scope, what I did and the result.</p></div>
+        <button class="btn btn-ghost" type="button" id="toggle-all">Expand all</button>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">Education & credentials</span><h2>Where I <em class="s">trained</em></h2></div></div>
+      <div class="grid grid-4" id="education"></div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">Principles</span><h2>How I work</h2></div></div>
+      <div class="grid grid-3">
+        <div class="card spot reveal"><h3>Production is sacred</h3><p>I build in a sandbox, compare against what's live, and get sign-off before every release.</p></div>
+        <div class="card spot reveal"><h3>Plain-language rules</h3><p>Before any automation, I write the rule in one sentence and confirm it with the people who use it.</p></div>
+        <div class="card spot reveal"><h3>Accurate data first</h3><p>Deduplication, field mapping and data-entry rules come before dashboards, so reports can be trusted.</p></div>
+        <div class="card spot reveal"><h3>Leave a trail</h3><p>Every build gets SOPs and workflow maps, so the team owns it after I hand off.</p></div>
+        <div class="card spot reveal"><h3>Compliant messaging</h3><p>A2P 10DLC, consent language and opt-outs are part of the build, not an afterthought.</p></div>
+        <div class="card spot reveal"><h3>Respect people's time</h3><p>No texts at 6 AM, no duplicate messages, and no flagging work that's already done.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
