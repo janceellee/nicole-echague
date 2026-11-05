@@ -145,6 +145,11 @@ window.API_FLOW = [
 
 // Client engagements (from the 2026 PDF portfolio).
 window.ENGAGEMENTS = [
+  { role: "Salesforce Developer & Systems Specialist", org: "Mino", when: "Sep 2026 – Present",
+    scope: "Salesforce build-out for a physician-led telehealth clinic in New York: the move onto Salesforce, partner websites and portals, integrations and day-to-day automation.",
+    did: ["Led the move onto Salesforce: planned the cutover, trained the team and handled go-live week.", "Designed and launched co-branded partner websites and portals on Experience Cloud, plus the company site and campaign pages.", "Built API integrations with the EHR, phone system, online store and fulfillment partner, and automated lead follow-up, order flags and texting rules."],
+    tools: ["Salesforce", "Apex", "Experience Cloud", "Flows", "REST APIs", "Zapier"],
+    result: "One Salesforce org running intake, partners, orders and follow-up, with every change tested in a sandbox first." },
   { role: "Operations & Finance Administrator", org: "Bermuda Bulk Gases", when: "Mar 2025 – Sep 2026",
     scope: "Day-to-day finance operations for a bulk-gas distributor: AP, bank reconciliation, procurement and reporting on Zoho Books and Google Sheets, plus GoHighLevel administration.",
     did: ["Owned the full AP cycle: invoice intake, GL coding, approval routing and scheduled vendor payments, reconciled every month-end.", "Ran monthly bank reconciliations, cleared discrepancies and aged items, and kept audit-ready documentation.", "Managed the vendor lifecycle: onboarding, W-9 and payment details, PO tracking and payment-status updates."],

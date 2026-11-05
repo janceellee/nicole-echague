@@ -148,6 +148,10 @@
       </div>
     </details>`;
 
+  // Experience newest first, by start month
+  const startOf = e => { const [m, y] = e.when.split(" – ")[0].split(" "); return +y * 12 + months.indexOf(m.slice(0, 3)); };
+  const ENGS = [...window.ENGAGEMENTS].sort((a, b) => startOf(b) - startOf(a));
+
   const sortedByDate = [...CASES].sort((a, b) => b.released.localeCompare(a.released));
 
   // Filter chips with an animated hand-off between sets.
@@ -230,7 +234,7 @@
         return siteCard(w, "", i).replace("site-card reveal", "site-card").replace('<button class="browser"',
           `<span class="fan-label"><span>${esc(w.title)}</span><span>${esc(w.kindLabel)}</span></span><button class="browser"`);
       }).join("");
-      document.getElementById("exp-rail").innerHTML = window.ENGAGEMENTS.slice(0, 4).map(tlItem).join("");
+      document.getElementById("exp-rail").innerHTML = ENGS.slice(0, 4).map(tlItem).join("");
       const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "NetSuite", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
       const row = stack.map(t => `<span>${esc(t)}</span>`).join("");
       document.getElementById("ticker").innerHTML = row + row;
@@ -348,7 +352,7 @@
     },
 
     about() {
-      document.getElementById("timeline").innerHTML = window.ENGAGEMENTS.map(tlItem).join("");
+      document.getElementById("timeline").innerHTML = ENGS.map(tlItem).join("");
       document.getElementById("toggle-all").addEventListener("click", ev => {
         const items = [...document.querySelectorAll(".tl-item")];
         const open = !items.every(d => d.open);
