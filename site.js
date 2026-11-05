@@ -28,10 +28,7 @@
   };
   const icon = id => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[id] || ""}</svg>`;
 
-  // Theme: follow the system unless the visitor picks one.
   const root = document.documentElement;
-  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
-  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
 
   // Header
   const links = [
@@ -39,32 +36,23 @@
     ["skills", "skills.html", "Skills"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
   ];
   const activeKey = page;
-  const [first, ...rest] = S.name.split(" ");
-  const wordmark = `<span>${esc(first)}</span>&nbsp;<span class="s">${esc(rest.join(" "))}</span>`;
+  const wordmark = `<span class="mark" aria-hidden="true">NE</span><span class="full">${esc(S.name)}</span>`;
   const header = document.createElement("header");
   header.className = "site-header";
   header.innerHTML = `
     <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
     <div class="wrap">
-      <a class="logo" href="index.html">${wordmark}</a>
+      <a class="logo" href="index.html" aria-label="${esc(S.name)}, home">${wordmark}</a>
       <nav class="nav" id="site-nav" aria-label="Main">
         ${links.map(([k, href, label]) => `<a href="${href}"${k === activeKey ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
       <div class="header-actions">
-        <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch color theme"><span class="sun">☀</span><span class="moon">☾</span></button>
         <a class="btn btn-primary magnetic" href="contact.html">Work with me</a>
         <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span class="burger"></span></button>
       </div>
     </div>`;
   document.body.prepend(header);
 
-  header.querySelector("#theme-btn").addEventListener("click", () => {
-    const next = isDark() ? "light" : "dark";
-    root.classList.add("theme-fade");
-    root.dataset.theme = next;
-    setTimeout(() => root.classList.remove("theme-fade"), 400);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-  });
   const menuBtn = header.querySelector("#menu-btn");
   const nav = header.querySelector("#site-nav");
   menuBtn.addEventListener("click", () => {
@@ -78,13 +66,16 @@
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="wrap">
-      <div class="foot-cta reveal">
-        <h2>Let's build something <em class="s">together</em>.</h2>
+      <div class="foot-cta">
+        <canvas id="stars" aria-hidden="true"></canvas>
+        <span class="eyebrow">// next step</span>
+        <h2>Let's build <span class="s">something good</span></h2>
+        <p class="muted measure">A website, a CRM, or the integration that finally connects them. Tell me what you need.</p>
         <a class="btn btn-primary magnetic" href="contact.html">Work with me →</a>
       </div>
       <div class="foot-grid">
         <div class="stack">
-          <a class="logo" href="index.html">${wordmark}</a>
+          <a class="logo" href="index.html"><span class="mark" aria-hidden="true">NE</span>${esc(S.name)}</a>
           <p class="muted measure">${esc(S.role)}. Websites, funnels, CRM systems and the integrations between them.</p>
         </div>
         <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="work.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -140,6 +131,22 @@
       </button>
       <figcaption><b>${esc(s.title)}</b><span>${esc(s.text)}</span></figcaption>
     </figure>`;
+
+  // One experience entry: year up front, expandable details, result at the end.
+  const tlItem = (e, i) => `
+    <details class="tl-item reveal"${i === 0 ? " open" : ""}>
+      <summary>
+        <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}<small>${esc(e.when)}</small></span>
+        <span class="what"><b>${esc(e.role)}</b><span class="muted">${esc(e.org)}</span></span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="tl-body">
+        <p class="muted measure">${esc(e.scope)}</p>
+        <ul>${e.did.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
+        <div class="tags">${e.tools.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+        <p class="result"><span class="eyebrow">result →</span>${esc(e.result)}</p>
+      </div>
+    </details>`;
 
   const sortedByDate = [...CASES].sort((a, b) => b.released.localeCompare(a.released));
 
@@ -223,22 +230,11 @@
         return siteCard(w, "", i).replace("site-card reveal", "site-card").replace('<button class="browser"',
           `<span class="fan-label"><span>${esc(w.title)}</span><span>${esc(w.kindLabel)}</span></span><button class="browser"`);
       }).join("");
-      document.getElementById("exp-rows").innerHTML = window.ENGAGEMENTS.slice(0, 5).map(e => `
-        <a class="row reveal" href="about.html#experience">
-          <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}</span>
-          <span class="what"><b>${esc(e.role)}</b><span>${esc(e.org)}</span></span>
-          <span class="end">${esc(e.when)}</span>
-        </a>`).join("");
-      const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
-      document.getElementById("stack").innerHTML = stack.map(s => `<span>${esc(s)}</span>`).join("") + `<span class="more">+ more</span>`;
-      document.getElementById("case-rows").innerHTML = ["ehr-sync", "partner-portals", "lead-automation", "sms-guardrails"].map(id => {
-        const c = byId[id];
-        return `<a class="row reveal" href="${caseUrl(c.id)}">
-          <span class="when">${esc(fmtDate(c.released))}</span>
-          <span class="what"><b>${esc(c.title)}</b><span>${esc(c.summary)}</span></span>
-          <span class="end">${esc(c.kicker)} <span class="arr">→</span></span>
-        </a>`;
-      }).join("");
+      document.getElementById("exp-rail").innerHTML = window.ENGAGEMENTS.slice(0, 4).map(tlItem).join("");
+      const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "NetSuite", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
+      const row = stack.map(t => `<span>${esc(t)}</span>`).join("");
+      document.getElementById("ticker").innerHTML = row + row;
+      document.getElementById("featured").innerHTML = ["ehr-sync", "partner-portals", "lead-automation"].map(id => caseCard(byId[id])).join("");
       apiFlow(document.getElementById("api-flow"));
     },
 
@@ -352,20 +348,7 @@
     },
 
     about() {
-      document.getElementById("timeline").innerHTML = window.ENGAGEMENTS.map((e, i) => `
-        <details class="tl-item reveal"${i === 0 ? " open" : ""}>
-          <summary>
-            <span class="when">${esc(e.when)}</span>
-            <span class="what"><b>${esc(e.org)}</b><span class="muted">${esc(e.role)}</span></span>
-            <span class="plus" aria-hidden="true"></span>
-          </summary>
-          <div class="tl-body">
-            <p class="muted measure">${esc(e.scope)}</p>
-            <ul>${e.did.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
-            <div class="tags">${e.tools.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-            <p class="result"><span class="eyebrow">Result</span> ${esc(e.result)}</p>
-          </div>
-        </details>`).join("");
+      document.getElementById("timeline").innerHTML = window.ENGAGEMENTS.map(tlItem).join("");
       document.getElementById("toggle-all").addEventListener("click", ev => {
         const items = [...document.querySelectorAll(".tl-item")];
         const open = !items.every(d => d.open);
@@ -445,6 +428,7 @@
       const el = en.target, end = +el.dataset.count, t0 = performance.now();
       const tick = t => { const p = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); };
       requestAnimationFrame(tick); cio.unobserve(el);
+      setTimeout(() => { el.textContent = end; }, 1400); // lands on the real number even if animation frames are paused
     }), { threshold: 0.6 });
     counters.forEach(el => cio.observe(el));
   }
@@ -519,4 +503,65 @@
   let sx = null;
   lb.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, { passive: true });
   lb.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) lbShow(lbIdx + (dx < 0 ? 1 : -1)); sx = null; });
+  // Soft light that follows the cursor across the grid background
+  if (finePointer) addEventListener("pointermove", e => {
+    root.style.setProperty("--cx", `${e.clientX}px`); root.style.setProperty("--cy", `${e.clientY}px`);
+  }, { passive: true });
+
+  // Side dot rail: one dot per labelled section, highlights the one in view
+  const railSections = [...document.querySelectorAll("[data-rail]")];
+  if (railSections.length > 1) {
+    const rail = document.createElement("nav");
+    rail.className = "dot-rail"; rail.setAttribute("aria-label", "Sections");
+    rail.innerHTML = railSections.map(sec => `<a href="#${sec.id}"><span>${esc(sec.dataset.rail)}</span></a>`).join("");
+    document.body.append(rail);
+    const dots = [...rail.children];
+    const rio = new IntersectionObserver(es => es.forEach(en => {
+      if (en.isIntersecting) dots.forEach((d, k) => d.classList.toggle("on", railSections[k] === en.target));
+    }), { rootMargin: "-45% 0px -50% 0px" });
+    railSections.forEach(sec => rio.observe(sec));
+  }
+
+  // Live clocks: Nicole's time in Manila next to New York
+  const faces = [...document.querySelectorAll(".clock-face[data-tz]")];
+  if (faces.length) {
+    const tick = () => faces.forEach(f => {
+      const parts = new Intl.DateTimeFormat("en-US", { timeZone: f.dataset.tz, hour: "numeric", minute: "numeric", second: "numeric", hour12: false }).formatToParts(new Date());
+      const get = t => +parts.find(p => p.type === t).value;
+      const h = get("hour") % 24, m = get("minute"), sec = get("second");
+      f.querySelector(".h").style.transform = `rotate(${(h % 12) * 30 + m * .5}deg)`;
+      f.querySelector(".m").style.transform = `rotate(${m * 6}deg)`;
+      f.querySelector(".s").style.transform = `rotate(${sec * 6}deg)`;
+      const cap = f.parentElement.querySelector(".clock-cap b");
+      if (cap) cap.textContent = new Intl.DateTimeFormat("en-US", { timeZone: f.dataset.tz, hour: "numeric", minute: "2-digit" }).format(new Date());
+    });
+    tick(); setInterval(tick, 1000);
+  }
+
+  // Twinkling starfield behind the closing call to action
+  const cv = document.getElementById("stars");
+  if (cv && cv.getContext) {
+    const ctx = cv.getContext("2d");
+    let stars = [], W = 0, H = 0;
+    const size = () => {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+      W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stars = Array.from({ length: Math.round(W * H / 2600) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.3 + .2, p: Math.random() * 6.28, v: Math.random() * .02 + .005 }));
+    };
+    const draw = () => {
+      ctx.clearRect(0, 0, W, H);
+      stars.forEach(st => { st.p += st.v; ctx.globalAlpha = .25 + .55 * (Math.sin(st.p) + 1) / 2; ctx.fillStyle = "#F3F1EC"; ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 6.28); ctx.fill(); });
+      if (!reduceMotion) requestAnimationFrame(draw);
+    };
+    size(); draw(); addEventListener("resize", size);
+  }
+
+  // Website screenshots tilt slightly toward the cursor
+  if (finePointer && !reduceMotion) document.querySelectorAll(".site-card:not(.fan .site-card) .browser").forEach(b => {
+    b.addEventListener("pointermove", e => {
+      const r = b.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      b.style.transform = `perspective(900px) rotateX(${-y * 5}deg) rotateY(${x * 6}deg) translateY(-4px)`;
+    });
+    b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+  });
 })();

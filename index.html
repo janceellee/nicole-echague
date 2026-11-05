@@ -7,103 +7,120 @@
 <meta name="description" content="Nicole Jancelle Echague: Salesforce and GoHighLevel developer, web developer, API integrations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main data-page="home">
-  <section class="hero">
-    <span class="dots" style="left:-40px;top:220px" aria-hidden="true"></span>
-    <span class="dots" style="right:-30px;top:20px" aria-hidden="true"></span>
+  <section class="hero" id="top" data-rail="Intro">
     <div class="wrap">
-      <div class="portrait-ht rise">
-        <img class="ht-light" src="assets/nicole-halftone.png" alt="Halftone portrait of Nicole Echague"><img class="ht-dark" src="assets/nicole-halftone-dark.png" alt="Halftone portrait of Nicole Echague">
-        <span class="status">available for projects</span>
-      </div>
-
-      <p class="hero-statement rise d1">
-        I'm a
-        <span class="pill-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16 8.5a3.5 3.5 0 0 1 1.5 6.72A3 3 0 0 1 14 18H7z"/></svg>Salesforce</span>
-        and
-        <span class="pill-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg>GoHighLevel</span>
-        developer. I design
-        <span class="pill-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>websites</span>
-        and wire everything together with
-        <span class="nowrap"><span class="pill-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.3 11l9.4-4M7.3 13l9.4 4"/></svg>API integrations</span></span>
-      </p>
-      <p class="hero-statement rise d2">
-        Right now I'm building
-        <span class="pill-word"><span class="rotator" data-rotate="partner portals|lead automations|EHR integrations|GHL funnels">partner portals</span></span>
-        for a telehealth clinic in New York. I love turning
-        <span class="pill-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>messy processes</span>
-        into systems a team can actually run.
-      </p>
-
-      <div class="hero-links rise d3">
-        <a href="https://upwork.com/freelancers/nicolejancellee" target="_blank" rel="noopener">upwork ↗</a>
-        <a href="https://github.com/janceellee" target="_blank" rel="noopener">github ↗</a>
-        <a href="websites.html">websites →</a>
-        <a href="contact.html">work with me →</a>
-      </div>
-
-      <div class="creds rise d3">
-        <div class="cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16 8.5a3.5 3.5 0 0 1 1.5 6.72A3 3 0 0 1 14 18H7z"/></svg>
-          <b>Salesforce</b><span>Developer · in production</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hello rise">// hello world, I'm<span class="caret" aria-hidden="true"></span></span>
+          <h1 class="name rise d1">Nicole<span class="dot">.</span><span class="line2">Echague</span>
+            <span class="scribble" aria-hidden="true">
+              <svg viewBox="0 0 44 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M42 4C30 6 14 12 6 24M6 24l1-9M6 24l9-2"/></svg>
+              I connect things
+            </span>
+          </h1>
+          <div class="roles rise d2">
+            <span><i style="background:var(--blue)"></i>Salesforce Developer</span>
+            <span><i style="background:var(--accent)"></i>GoHighLevel Specialist</span>
+            <span><i style="background:var(--pink)"></i>Web Developer</span>
+            <span><i style="background:var(--mint)"></i>API Integrations</span>
+          </div>
+          <p class="hero-lede rise d2">I build <span class="hl">websites</span> and the <span class="hl">CRM systems</span> behind them, in Salesforce and GoHighLevel, then wire everything else together with <span class="hl">APIs and webhooks</span>. Right now that means <span class="rotator hl" data-rotate="partner portals|lead automations|EHR integrations|GHL funnels">partner portals</span> for a telehealth clinic in New York.</p>
+          <div class="btn-row rise d3">
+            <a class="btn btn-primary magnetic" href="websites.html">View my work <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+          </div>
+          <div class="socials rise d3">
+            <a href="https://upwork.com/freelancers/nicolejancellee" target="_blank" rel="noopener">◆ Upwork</a>
+            <a href="https://github.com/janceellee" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="systems.html">⇄ Systems</a>
+            <a href="about.html#experience">◷ Experience</a>
+          </div>
         </div>
-        <div class="cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg>
-          <b>GoHighLevel</b><span>7 client builds · A2P 10DLC</span>
-        </div>
-        <div class="cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
-          <b>MBA</b><span>National Dong Hwa University</span>
+        <div class="orbit rise d2">
+          <svg class="ring2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5"/></svg>
+          <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49"/></svg>
+          <div class="photo"><img src="assets/nicole.jpg" alt="Portrait of Nicole Echague"></div>
+          <div class="badges" aria-hidden="true"><span><b>SF</b></span><span><b>GHL</b></span><span><b>&lt;/&gt;</b></span><span><b>API</b></span></div>
+          <span class="status">available for projects</span>
         </div>
       </div>
-      <div class="numbers rise d3">
-        <div><b data-stat="sites"></b><span>Websites built</span></div>
-        <div><b data-count="7">7</b><span>GHL client builds</span></div>
-        <div><b data-count="4">4</b><span>A2P registrations</span></div>
-        <div><b data-stat="screens"></b><span>Systems shown</span></div>
+      <div class="stats">
+        <div class="stat reveal"><b data-stat="sites"></b><span>Websites<br>built</span></div>
+        <div class="stat reveal"><b data-count="7">7</b><span>GoHighLevel<br>client builds</span></div>
+        <div class="stat reveal"><b data-count="4">4</b><span>A2P 10DLC<br>registrations</span></div>
+        <div class="stat reveal"><b data-stat="screens"></b><span>System builds<br>shown</span></div>
       </div>
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="glance" data-rail="At a glance">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">01 — websites</span></div><a class="see-all" href="websites.html">all websites →</a></div>
+      <div class="section-head"><div><span class="eyebrow">01 · at a glance</span><h2>A quick <span class="s">profile</span></h2></div></div>
+      <div class="bento">
+        <a class="tile building spot reveal" href="websites.html">
+          <span class="tag-top">● currently building</span>
+          <h3>Partner portals for a New York telehealth clinic</h3>
+          <p class="muted">Co-branded sites on Salesforce Experience Cloud, each with intake, booking and invoicing wired into one org.</p>
+          <img src="assets/site-3.jpg" alt="Partner portal home page" loading="lazy">
+        </a>
+        <div class="tile clock reveal">
+          <span class="eyebrow">// working hours overlap</span>
+          <div class="clocks">
+            <div><div class="clock-face" data-tz="Asia/Manila"><span class="hand h"></span><span class="hand m"></span><span class="hand s"></span><span class="pin"></span></div><p class="clock-cap"><b>–</b>Philippines</p></div>
+            <div><div class="clock-face" data-tz="America/New_York"><span class="hand h"></span><span class="hand m"></span><span class="hand s"></span><span class="pin"></span></div><p class="clock-cap"><b>–</b>New York</p></div>
+          </div>
+          <p class="muted" style="font-size:.88rem">Based in the Philippines, working US hours.</p>
+        </div>
+        <div class="tile stack-tile reveal">
+          <span class="eyebrow">// daily stack</span>
+          <h3>Tools I reach for</h3>
+          <div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+        </div>
+        <div class="tile edu reveal">
+          <span class="eyebrow">// education</span>
+          <b>MBA, National Dong Hwa University</b>
+          <p class="muted">University Scholar · BSBA Financial Management, Far Eastern University · Certified Financial Information Associate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="websites" data-rail="Websites">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">02 · websites</span><h2>Sites I've <span class="s">designed</span> and built</h2>
+        <p class="muted measure">Hover to spread the cards, click one to see it full size.</p></div>
+        <a class="see-all" href="websites.html">all 16 websites →</a></div>
       <div class="fan" id="fan"></div>
     </div>
   </section>
 
-  <section class="band">
-    <span class="dots" style="right:0;top:60px" aria-hidden="true"></span>
+  <section class="band" id="integrations" data-rail="Integrations">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">02 — integrations</span><h2>Press run. Watch an invoice become an order.</h2>
+      <div class="section-head"><div><span class="eyebrow">03 · api integrations</span><h2>Press run. Watch an invoice become an <span class="s">order</span>.</h2>
         <p class="muted measure">A live client automation: a paid GoHighLevel invoice syncs to NetSuite as a sales order. Click any step to see the data and code behind it.</p></div>
         <a class="see-all" href="systems.html">all systems →</a></div>
       <div class="api-flow reveal" id="api-flow"></div>
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="experience" data-rail="Experience">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">03 — experience</span></div><a class="see-all" href="about.html#experience">full history →</a></div>
-      <div class="rows" id="exp-rows"></div>
+      <div class="section-head"><div><span class="eyebrow">04 · experience</span><h2>Where I've <span class="s">shipped</span></h2></div>
+        <a class="see-all" href="about.html#experience">full history →</a></div>
+      <div class="rail" id="exp-rail"></div>
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="cases" data-rail="Case studies">
     <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">04 — stack</span></div><a class="see-all" href="skills.html">view all →</a></div>
-      <div class="chips reveal" id="stack"></div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="section-head"><div><span class="eyebrow">05 — case studies</span></div><a class="see-all" href="work.html">all case studies →</a></div>
-      <div class="rows" id="case-rows"></div>
+      <div class="section-head"><div><span class="eyebrow">05 · case studies</span><h2>The systems behind the <span class="s">sites</span></h2></div>
+        <a class="see-all" href="work.html">all case studies →</a></div>
+      <div class="grid grid-3" id="featured"></div>
     </div>
   </section>
 </main>

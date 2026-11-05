@@ -6,21 +6,23 @@
 <title>About · Nicole Echague</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main data-page="about">
   <section class="hero">
     <div class="wrap about-grid">
-      <div class="portrait-ht">
-        <img class="ht-light" src="assets/nicole-halftone.png" alt="Halftone portrait of Nicole Echague"><img class="ht-dark" src="assets/nicole-halftone-dark.png" alt="Halftone portrait of Nicole Echague">
-        <span class="status">Taguig City · US hours</span>
+      <div class="orbit">
+        <svg class="ring2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5"/></svg>
+        <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49"/></svg>
+        <div class="photo"><img src="assets/nicole.jpg" alt="Portrait of Nicole Echague"></div>
+        <span class="status">Philippines · US hours</span>
       </div>
       <div class="hero-copy">
         <span class="eyebrow">About</span>
         <h1>Hi, I'm <em class="s">Nicole</em>.</h1>
-        <p class="hero-lede">I'm Nicole Jancelle Echague, based in Taguig City, Philippines, working with US teams. I build websites and the systems behind them in Salesforce and GoHighLevel, and I connect those systems to everything else through APIs.</p>
+        <p class="hero-lede">I'm Nicole Jancelle Echague, based in the Philippines, working with US teams. I build websites and the systems behind them in Salesforce and GoHighLevel, and I connect those systems to everything else through APIs.</p>
         <p class="muted measure">I started in finance and data, running accounts payable and reconciliation for a distributor. That background is why I care about accuracy, clean data and documentation in every CRM I touch.</p>
         <div class="btn-row"><a class="btn btn-primary magnetic" href="contact.html">Work with me</a><a class="btn btn-ghost" href="skills.html">See my skills</a></div>
       </div>
@@ -34,7 +36,7 @@
           <p class="muted measure">Click a role to see the scope, what I did and the result.</p></div>
         <button class="btn btn-ghost" type="button" id="toggle-all">Expand all</button>
       </div>
-      <div class="timeline" id="timeline"></div>
+      <div class="rail" id="timeline"></div>
     </div>
   </section>
 

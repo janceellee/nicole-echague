@@ -5,7 +5,7 @@ window.SITE = {
   fullName: "Nicole Jancelle Echague",
   short: "Nicole",
   role: "Salesforce · GoHighLevel · Web Developer · API Integrations",
-  location: "Taguig City, Philippines",
+  location: "Philippines",
   upwork: "upwork.com/freelancers/nicolejancellee",
   github: "github.com/janceellee",
   availability: "Open to contract and full-time work with US teams"
@@ -184,7 +184,7 @@ window.ENGAGEMENTS = [
 
 window.EDUCATION = [
   { title: "MBA", org: "National Dong Hwa University", note: "University Scholar" },
-  { title: "BSBA, Financial Management", org: "Far Eastern University", note: "Taguig City Scholar" },
+  { title: "BSBA, Financial Management", org: "Far Eastern University", note: "City Scholar" },
   { title: "Certified Financial Information Associate", org: "February 2025", note: "Certification" },
   { title: "TOEIC 965", org: "English proficiency", note: "Certification" }
 ];
