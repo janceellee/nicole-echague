@@ -216,23 +216,30 @@
   // Page renderers
   const render = {
     home() {
-      document.getElementById("pillars").innerHTML = window.PILLARS.map(p => `
-        <a class="pillar spot reveal" href="${p.link}" id="pillar-${p.id}">
-          <span class="pillar-ico">${icon(p.id)}</span>
-          <span class="eyebrow">${esc(p.kicker)}</span>
-          <h3>${esc(p.title)}</h3>
-          <p>${esc(p.text)}</p>
-          <ul>${p.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
-          <span class="more">${esc(p.linkLabel)} <span class="arr">→</span></span>
+      // Three sites fanned like a hand of cards; hover spreads them, click opens the viewer.
+      document.getElementById("fan").innerHTML = ["backtheblue", "wegotu", "babe"].map(id => {
+        const i = SITES.findIndex(w => w.id === id), w = SITES[i];
+        // The fan sets its own transforms, so these cards skip the scroll-reveal shift.
+        return siteCard(w, "", i).replace("site-card reveal", "site-card").replace('<button class="browser"',
+          `<span class="fan-label"><span>${esc(w.title)}</span><span>${esc(w.kindLabel)}</span></span><button class="browser"`);
+      }).join("");
+      document.getElementById("exp-rows").innerHTML = window.ENGAGEMENTS.slice(0, 5).map(e => `
+        <a class="row reveal" href="about.html#experience">
+          <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}</span>
+          <span class="what"><b>${esc(e.role)}</b><span>${esc(e.org)}</span></span>
+          <span class="end">${esc(e.when)}</span>
         </a>`).join("");
-      const pick = ids => ids.map(id => SITES.findIndex(w => w.id === id));
-      const picks = pick(["backtheblue", "wegotu", "babe", "fundedva"]);
-      document.getElementById("showcase").innerHTML = picks.map((i, k) => siteCard(SITES[i], ["feature", "side", "", ""][k], i)).join("");
-      document.getElementById("featured").innerHTML = ["ehr-sync", "partner-portals", "lead-automation"].map(id => caseCard(byId[id])).join("");
+      const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
+      document.getElementById("stack").innerHTML = stack.map(s => `<span>${esc(s)}</span>`).join("") + `<span class="more">+ more</span>`;
+      document.getElementById("case-rows").innerHTML = ["ehr-sync", "partner-portals", "lead-automation", "sms-guardrails"].map(id => {
+        const c = byId[id];
+        return `<a class="row reveal" href="${caseUrl(c.id)}">
+          <span class="when">${esc(fmtDate(c.released))}</span>
+          <span class="what"><b>${esc(c.title)}</b><span>${esc(c.summary)}</span></span>
+          <span class="end">${esc(c.kicker)} <span class="arr">→</span></span>
+        </a>`;
+      }).join("");
       apiFlow(document.getElementById("api-flow"));
-      const clients = ["Mino", "We Got U", "Golden Goose", "Optimize Tax Pro", "Bernard Gooden Real Estate", "Producers Wealth", "Infinite Revolution", "Bermuda Bulk Gases", "Funded VA", "Taxes To Go"];
-      const row = clients.map(c => `<span>${esc(c)}</span>`).join("<i>✦</i>");
-      document.getElementById("marquee").innerHTML = `<div class="marquee-track">${row}<i>✦</i>${row}<i>✦</i></div>`;
     },
 
     websites() {
