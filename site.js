@@ -133,23 +133,34 @@
     </figure>`;
 
   // One experience entry: year up front, expandable details, result at the end.
+  // Experience reads like a workflow's run history: each role is a run with a status and duration.
+  const ym = str => { const parts = str.trim().split(" "), y = +parts.pop(), m = parts[0]; return y * 12 + (m ? months.indexOf(m.slice(0, 3)) : 0); };
+  const running = e => /present/i.test(e.when);
+  // Ongoing roles come first, then everything else by start month.
+  const startOf = e => ym(e.when.split(" – ")[0]) + (running(e) ? 1e6 : 0);
+  const runLength = e => {
+    const [a, b] = e.when.split(" – ");
+    if (!b || running(e) || !/ /.test(a)) return "";
+    const n = ym(b) - ym(a) + 1;
+    return n >= 12 ? `${Math.floor(n / 12)}y ${n % 12 ? (n % 12) + "mo" : ""}`.trim() : `${n}mo`;
+  };
   const tlItem = (e, i) => `
     <details class="tl-item reveal"${i === 0 ? " open" : ""}>
       <summary>
         <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}${e.when.includes(" ") ? `<small>${esc(e.when)}</small>` : ""}</span>
         <span class="what"><b>${esc(e.role)}</b><span class="muted">${esc(e.org)}</span></span>
+        <span class="run">${running(e) ? '<span class="pill live">running</span>' : '<span class="pill done">✓ success</span>'}${runLength(e) ? `<small>${runLength(e)}</small>` : ""}</span>
         <span class="plus" aria-hidden="true"></span>
       </summary>
       <div class="tl-body">
         <p class="muted measure">${esc(e.scope)}</p>
-        <ul>${e.did.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
+        <ol class="steps">${e.did.map((d, k) => `<li><span class="step-k">step ${k + 1}</span>${esc(d)}</li>`).join("")}</ol>
         <div class="tags">${e.tools.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-        <p class="result"><span class="eyebrow">result →</span>${esc(e.result)}</p>
+        <p class="result"><span class="eyebrow">output →</span>${esc(e.result)}</p>
       </div>
     </details>`;
+  const runLog = list => `<div class="run-head"><span>execution history</span><span>${list.length} runs · ${list.filter(running).length} running · ${list.filter(e => !running(e)).length} ✓ success</span></div>`;
 
-  // Experience newest first, by start month
-  const startOf = e => { const parts = e.when.split(" – ")[0].split(" "), y = +parts.pop(), m = parts[0]; return y * 12 + (m ? months.indexOf(m.slice(0, 3)) : 0); };
   const ENGS = [...window.ENGAGEMENTS].sort((a, b) => startOf(b) - startOf(a));
 
   const sortedByDate = [...CASES].sort((a, b) => b.released.localeCompare(a.released));
@@ -234,7 +245,7 @@
         return siteCard(w, "", i).replace("site-card reveal", "site-card").replace('<button class="browser"',
           `<span class="fan-label"><span>${esc(w.title)}</span><span>${esc(w.kindLabel)}</span></span><button class="browser"`);
       }).join("");
-      document.getElementById("exp-rail").innerHTML = ENGS.slice(0, 4).map(tlItem).join("");
+      document.getElementById("exp-rail").innerHTML = runLog(ENGS) + ENGS.slice(0, 4).map(tlItem).join("");
       const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "NetSuite", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
       const row = stack.map(t => `<span>${esc(t)}</span>`).join("");
       document.getElementById("ticker").innerHTML = row + row;
@@ -352,7 +363,7 @@
     },
 
     about() {
-      document.getElementById("timeline").innerHTML = ENGS.map(tlItem).join("");
+      document.getElementById("timeline").innerHTML = runLog(ENGS) + ENGS.map(tlItem).join("");
       document.getElementById("toggle-all").addEventListener("click", ev => {
         const items = [...document.querySelectorAll(".tl-item")];
         const open = !items.every(d => d.open);
