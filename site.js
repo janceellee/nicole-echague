@@ -136,7 +136,7 @@
   const tlItem = (e, i) => `
     <details class="tl-item reveal"${i === 0 ? " open" : ""}>
       <summary>
-        <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}<small>${esc(e.when)}</small></span>
+        <span class="when">${esc(e.when.split(" – ")[0].split(" ").pop())}${e.when.includes(" ") ? `<small>${esc(e.when)}</small>` : ""}</span>
         <span class="what"><b>${esc(e.role)}</b><span class="muted">${esc(e.org)}</span></span>
         <span class="plus" aria-hidden="true"></span>
       </summary>
@@ -149,7 +149,7 @@
     </details>`;
 
   // Experience newest first, by start month
-  const startOf = e => { const [m, y] = e.when.split(" – ")[0].split(" "); return +y * 12 + months.indexOf(m.slice(0, 3)); };
+  const startOf = e => { const parts = e.when.split(" – ")[0].split(" "), y = +parts.pop(), m = parts[0]; return y * 12 + (m ? months.indexOf(m.slice(0, 3)) : 0); };
   const ENGS = [...window.ENGAGEMENTS].sort((a, b) => startOf(b) - startOf(a));
 
   const sortedByDate = [...CASES].sort((a, b) => b.released.localeCompare(a.released));

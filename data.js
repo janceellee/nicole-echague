@@ -145,6 +145,11 @@ window.API_FLOW = [
 
 // Client engagements (from the 2026 PDF portfolio).
 window.ENGAGEMENTS = [
+  { role: "GHL Expert & API Integrations", org: "Golden Goose", when: "2026",
+    scope: "GoHighLevel and API integration work for the Golden Goose platform.",
+    did: ["Run the GoHighLevel side of the platform: pipelines, workflows, forms and messaging.", "Build API and webhook integrations between GoHighLevel and the platform's other tools.", "Keep data in sync and automations reliable as the platform grows."],
+    tools: ["GoHighLevel", "REST APIs", "Webhooks", "Workflows"],
+    result: "GoHighLevel and the platform's other tools working from the same synced data." },
   { role: "Salesforce Developer & Systems Specialist", org: "Mino", when: "Sep 2026 – Present",
     scope: "Salesforce build-out for a physician-led telehealth clinic in New York: the move onto Salesforce, partner websites and portals, integrations and day-to-day automation.",
     did: ["Led the move onto Salesforce: planned the cutover, trained the team and handled go-live week.", "Designed and launched co-branded partner websites and portals on Experience Cloud, plus the company site and campaign pages.", "Built API integrations with the EHR, phone system, online store and fulfillment partner, and automated lead follow-up, order flags and texting rules."],
