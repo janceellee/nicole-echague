@@ -6,9 +6,7 @@ window.SITE = {
   short: "Nicole",
   role: "Salesforce · GoHighLevel · Web Developer · API Integrations",
   location: "Taguig City, Philippines",
-  email: "janceelle@gmail.com",
   upwork: "upwork.com/freelancers/nicolejancellee",
-  linkedin: "[linkedin.com/in/yourname]",
   github: "github.com/janceellee",
   availability: "Open to contract and full-time work with US teams"
 };
@@ -181,17 +179,12 @@ window.ENGAGEMENTS = [
     scope: "Ground-up GoHighLevel build for a financial-services practice.",
     did: ["Configured the sub-account, users, permissions, pipelines and custom fields.", "Built long-term follow-up sequences, appointment reminders and re-engagement campaigns across email and SMS.", "Completed A2P 10DLC registration, email authentication and consent and opt-out handling."],
     tools: ["GoHighLevel", "A2P 10DLC", "Email Auth", "SOPs"],
-    result: "A compliant, fully documented CRM a financial team could adopt immediately." },
-  { role: "Content Analyst", org: "London Stock Exchange Group", when: "Jul 2022 – Feb 2025",
-    scope: "Financial and market-data operations under strict controls and deadlines.",
-    did: ["Owned time-sensitive monthly processes end to end: collecting, validating, classifying and loading data.", "Resolved miscoding, holdings and source-data discrepancies and coordinated corrections.", "Built checks and dashboards with Advanced Excel, VBA macros and Power BI, and trained new hires."],
-    tools: ["Advanced Excel", "VBA", "Power BI", "Data Controls"],
-    result: "Accurate, on-time data and a repeatable process others could run." }
+    result: "A compliant, fully documented CRM a financial team could adopt immediately." }
 ];
 
 window.EDUCATION = [
   { title: "MBA", org: "National Dong Hwa University", note: "University Scholar" },
-  { title: "BSBA, Financial Management", org: "Far Eastern University", note: "LSEG & Taguig City Scholar" },
+  { title: "BSBA, Financial Management", org: "Far Eastern University", note: "Taguig City Scholar" },
   { title: "Certified Financial Information Associate", org: "February 2025", note: "Certification" },
   { title: "TOEIC 965", org: "English proficiency", note: "Certification" }
 ];

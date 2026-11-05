@@ -36,10 +36,9 @@
   // Header
   const links = [
     ["home", "index.html", "Home"], ["websites", "websites.html", "Websites"], ["systems", "systems.html", "Systems & APIs"],
-    ["work", "work.html", "Case studies"], ["services", "services.html", "Services"], ["about", "about.html", "About"],
-    ["contact", "contact.html", "Contact"]
+    ["skills", "skills.html", "Skills"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
   ];
-  const activeKey = page === "case" ? "work" : page === "skills" ? "about" : page;
+  const activeKey = page;
   const [first, ...rest] = S.name.split(" ");
   const wordmark = `<span>${esc(first)}</span>&nbsp;<span class="s">${esc(rest.join(" "))}</span>`;
   const header = document.createElement("header");
@@ -81,16 +80,16 @@
     <div class="wrap">
       <div class="foot-cta reveal">
         <h2>Let's build something <em class="s">together</em>.</h2>
-        <div class="copy-row"><code>${esc(S.email)}</code><button class="btn btn-ghost copy-btn" type="button" data-copy="${esc(S.email)}">Copy email</button></div>
+        <a class="btn btn-primary magnetic" href="contact.html">Work with me →</a>
       </div>
       <div class="foot-grid">
         <div class="stack">
           <a class="logo" href="index.html">${wordmark}</a>
           <p class="muted measure">${esc(S.role)}. Websites, funnels, CRM systems and the integrations between them.</p>
         </div>
-        <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="skills.html">Skills</a></li></ul></div>
+        <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="work.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div><h4>Elsewhere</h4><ul>
-          <li>${ext(S.upwork)}</li><li>${ext(S.github)}</li><li>${ext(S.linkedin)}</li>
+          <li>${ext(S.upwork)}</li><li>${ext(S.github)}</li>
         </ul></div>
       </div>
       <div class="foot-bottom"><span>© ${new Date().getFullYear()} ${esc(S.fullName)}</span><span>${esc(S.location)}</span></div>
@@ -231,7 +230,7 @@
       document.getElementById("showcase").innerHTML = picks.map((i, k) => siteCard(SITES[i], ["feature", "side", "", ""][k], i)).join("");
       document.getElementById("featured").innerHTML = ["ehr-sync", "partner-portals", "lead-automation"].map(id => caseCard(byId[id])).join("");
       apiFlow(document.getElementById("api-flow"));
-      const clients = ["Mino", "We Got U", "Golden Goose", "Optimize Tax Pro", "Bernard Gooden Real Estate", "Producers Wealth", "Infinite Revolution", "Bermuda Bulk Gases", "Funded VA", "Taxes To Go", "London Stock Exchange Group"];
+      const clients = ["Mino", "We Got U", "Golden Goose", "Optimize Tax Pro", "Bernard Gooden Real Estate", "Producers Wealth", "Infinite Revolution", "Bermuda Bulk Gases", "Funded VA", "Taxes To Go"];
       const row = clients.map(c => `<span>${esc(c)}</span>`).join("<i>✦</i>");
       document.getElementById("marquee").innerHTML = `<div class="marquee-track">${row}<i>✦</i>${row}<i>✦</i></div>`;
     },
@@ -385,7 +384,7 @@
         const v = id => document.getElementById(id).value;
         const body = `Name: ${v("f-name")}\nEmail: ${v("f-email")}\nCompany: ${v("f-company")}\nInterested in: ${v("f-type") || "-"}\n\n${v("f-msg")}`;
         status.hidden = false;
-        status.innerHTML = `This form doesn't send by itself yet. Your message is ready: <button class="text-link" type="button" id="copy-msg">copy it</button> and email it to <b>${esc(S.email)}</b>.`;
+        status.innerHTML = `This form doesn't send by itself yet. Your message is ready: <button class="text-link" type="button" id="copy-msg">copy it</button> and send it to me on ${ext(S.upwork)}.`;
         document.getElementById("copy-msg").addEventListener("click", () => copy(body, "Message copied"));
       });
     }
