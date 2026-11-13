@@ -103,7 +103,7 @@
     <article class="site-card reveal ${cls}" data-kind="${w.kind}">
       <button class="browser" type="button" data-lightbox="sites" data-index="${i}" aria-label="Enlarge screenshot of ${esc(w.title)}">
         <span class="bar"><i></i><i></i><i></i></span>
-        <span class="shot"><img src="${esc(w.shot)}" alt="Home page of the ${esc(w.title)} website" loading="lazy"></span>
+        <span class="shot"><img src="${esc(w.shot)}" alt="Home page of the ${esc(w.title)} website" loading="lazy" decoding="async"></span>
         <span class="zoom" aria-hidden="true">⤢ View</span>
       </button>
       <div class="site-meta">
@@ -127,7 +127,7 @@
   const sysCard = (s, i) => `
     <figure class="sys-card reveal" data-group="${s.group}">
       <button class="sys-shot" type="button" data-lightbox="systems" data-index="${i}" aria-label="Enlarge ${esc(s.title)}">
-        <img src="${esc(s.shot)}" alt="${esc(s.title)} screen" loading="lazy"><span class="zoom" aria-hidden="true">⤢</span>
+        <img src="${esc(s.shot)}" alt="${esc(s.title)} screen" loading="lazy" decoding="async"><span class="zoom" aria-hidden="true">⤢</span>
       </button>
       <figcaption><b>${esc(s.title)}</b><span>${esc(s.text)}</span></figcaption>
     </figure>`;
@@ -301,6 +301,7 @@
                   <thead><tr><th>Type</th><th>Component</th></tr></thead>
                   <tbody>${c.build.map(b => `<tr><td>${esc(b.type)}</td><td>${esc(b.name)}</td></tr>`).join("")}</tbody>
                 </table></div></section>
+              ${c.code ? `<section class="reveal"><span class="eyebrow">Code · ${esc(c.code.lang)}</span><h2>${esc(c.code.title)}</h2><pre class="code-sample"><code>${esc(c.code.src)}</code></pre></section>` : ""}
               <section class="reveal"><span class="eyebrow">Outcome</span><h2>What changed</h2>
                 <ul>${c.outcome.map(o => `<li>${esc(o)}</li>`).join("")}</ul></section>
               <section class="reveal"><span class="eyebrow">Lesson learned</span><p class="lesson">“${esc(c.lesson)}”</p></section>

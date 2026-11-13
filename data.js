@@ -1,5 +1,4 @@
 // All portfolio content lives here so pages stay in sync.
-// Anything in [brackets] is a placeholder for Nicole to fill in.
 window.SITE = {
   name: "Nicole Echague",
   fullName: "Nicole Jancelle Echague",
@@ -33,52 +32,52 @@ window.PILLARS = [
 
 // Every website Nicole has designed and built. Screenshots live in assets/.
 window.WEBSITES = [
-  { id: "mino", title: "Mino", client: "Physician-led peptide therapy", shot: "assets/site-1.jpg", kind: "salesforce", kindLabel: "Company website",
+  { id: "mino", title: "Mino", client: "Physician-led peptide therapy", shot: "assets/site-1.webp", kind: "salesforce", kindLabel: "Company website",
     blurb: "The brand site for a New York peptide therapy clinic, with an age check, cookie consent and a contact form that creates records in Salesforce.",
     tools: ["WordPress", "Custom CSS", "Salesforce"] },
-  { id: "backtheblue", title: "Back the Blue", client: "Mino partner campaign", shot: "assets/site-2.jpg", kind: "salesforce", kindLabel: "Campaign landing page",
+  { id: "backtheblue", title: "Back the Blue", client: "Mino partner campaign", shot: "assets/site-2.webp", kind: "salesforce", kindLabel: "Campaign landing page",
     blurb: "A navy-and-gold campaign page for first responders and their unions, with a scrolling partner bar, radio tie-in and its own intake form.",
     tools: ["HTML/CSS", "Salesforce Sites", "Intake form"] },
-  { id: "premier", title: "Premier Health", client: "Mino partner portal", shot: "assets/site-3.jpg", kind: "salesforce", kindLabel: "Partner portal",
+  { id: "premier", title: "Premier Health", client: "Mino partner portal", shot: "assets/site-3.webp", kind: "salesforce", kindLabel: "Partner portal",
     blurb: "A co-branded page for an in-person clinic partnership, with services, a doctor profile and visit requests that book straight into the EHR.",
     tools: ["Experience Cloud", "LWC", "EHR booking API"] },
-  { id: "belkin", title: "Belkin × Mino", client: "Physician referral program", shot: "assets/site-4.jpg", kind: "salesforce", kindLabel: "Membership site",
+  { id: "belkin", title: "Belkin × Mino", client: "Physician referral program", shot: "assets/site-4.webp", kind: "salesforce", kindLabel: "Membership site",
     blurb: "A private membership site for a referring physician's patients, with membership tiers, FAQ, login and invoicing.",
     tools: ["Salesforce Sites", "Visualforce", "Invoicing"] },
-  { id: "babe", title: "B.A.B.E. × Mino", client: "Women's wellness community", shot: "assets/site-5.jpg", kind: "salesforce", kindLabel: "Membership site + portal",
+  { id: "babe", title: "B.A.B.E. × Mino", client: "Women's wellness community", shot: "assets/site-5.webp", kind: "salesforce", kindLabel: "Membership site + portal",
     blurb: "A soft, editorial membership site for a women's community, with its own member portal and an on-page assistant.",
     tools: ["Experience Cloud", "Member portal", "Custom typography"] },
-  { id: "btoba", title: "BTOBA × Mino", client: "Officers' association", shot: "assets/site-6.jpg", kind: "salesforce", kindLabel: "Association program page",
+  { id: "btoba", title: "BTOBA × Mino", client: "Officers' association", shot: "assets/site-6.webp", kind: "salesforce", kindLabel: "Association program page",
     blurb: "A wellness program page for a bridge and tunnel officers' association, built around the association's own badge and colors.",
     tools: ["Experience Cloud", "Guest flows", "Intake"] },
-  { id: "pasba", title: "PA-SBA × Mino", client: "Police union benefit", shot: "assets/site-7.jpg", kind: "salesforce", kindLabel: "Member benefit site",
+  { id: "pasba", title: "PA-SBA × Mino", client: "Police union benefit", shot: "assets/site-7.webp", kind: "salesforce", kindLabel: "Member benefit site",
     blurb: "A $0 member benefit site for a police union, with clear cost tiles, QR enrollment and leads routed into Salesforce.",
     tools: ["Website builder", "Email-to-Salesforce", "QR enrollment"] },
-  { id: "northport", title: "Northport Wellness × Mino", client: "Practice partner", shot: "assets/site-8.jpg", kind: "salesforce", kindLabel: "Practice partner portal",
+  { id: "northport", title: "Northport Wellness × Mino", client: "Practice partner", shot: "assets/site-8.webp", kind: "salesforce", kindLabel: "Practice partner portal",
     blurb: "A portal where a wellness practice sets its own prices, invoices patients and has products shipped to their door.",
     tools: ["Experience Cloud", "Pricing & invoicing", "Video hero"] },
-  { id: "wegotu", title: "We Got U", client: "Full-service marketing agency", shot: "assets/web-wegotu.jpg", kind: "ghl", kindLabel: "Agency website + funnels",
+  { id: "wegotu", title: "We Got U", client: "Full-service marketing agency", shot: "assets/web-wegotu.webp", kind: "ghl", kindLabel: "Agency website + funnels",
     blurb: "GoHighLevel website, funnels and lead-to-booking automation for a full-service marketing agency.",
     tools: ["GoHighLevel", "Funnels", "Calendars"] },
-  { id: "goldengoose", title: "Golden Goose", client: "Creator platform", shot: "assets/web-goldengoose.jpg", kind: "ghl", kindLabel: "Platform site",
+  { id: "goldengoose", title: "Golden Goose", client: "Creator platform", shot: "assets/web-goldengoose.webp", kind: "ghl", kindLabel: "Platform site",
     blurb: "Platform site with pipeline stages, partner onboarding and automated follow-up.",
     tools: ["GoHighLevel", "Pipelines", "Workflows"] },
-  { id: "optimizetax", title: "Optimize Tax Pro", client: "Tax preparation software", shot: "assets/web-optimizetax.jpg", kind: "ghl", kindLabel: "Marketing site",
+  { id: "optimizetax", title: "Optimize Tax Pro", client: "Tax preparation software", shot: "assets/web-optimizetax.webp", kind: "ghl", kindLabel: "Marketing site",
     blurb: "Marketing site plus a client-intake pipeline, demo booking and reminder workflows.",
     tools: ["GoHighLevel", "Intake pipeline", "Demo booking"] },
-  { id: "fundedva", title: "Funded VA", client: "VA home loans", shot: "assets/web-fundedva.jpg", kind: "ghl", kindLabel: "Lead-generation funnel",
+  { id: "fundedva", title: "Funded VA", client: "VA home loans", shot: "assets/web-fundedva.webp", kind: "ghl", kindLabel: "Lead-generation funnel",
     blurb: "Lead-generation funnel with a multi-step eligibility quiz wired into the CRM.",
     tools: ["GoHighLevel", "Quiz funnel", "Lead routing"] },
-  { id: "infinite", title: "Infinite Revolution", client: "Overdrive Edition launch", shot: "assets/web-infinite.jpg", kind: "ghl", kindLabel: "Product launch page",
+  { id: "infinite", title: "Infinite Revolution", client: "Overdrive Edition launch", shot: "assets/web-infinite.webp", kind: "ghl", kindLabel: "Product launch page",
     blurb: "Product landing and launch build with automated capture, nurture and hand-off.",
     tools: ["GoHighLevel", "Launch funnel", "Webhooks"] },
-  { id: "taxestogo", title: "Taxes To Go", client: "Mobile tax app", shot: "assets/web-taxestogo.jpg", kind: "ghl", kindLabel: "CRM + marketing site",
+  { id: "taxestogo", title: "Taxes To Go", client: "Mobile tax app", shot: "assets/web-taxestogo.webp", kind: "ghl", kindLabel: "CRM + marketing site",
     blurb: "Full CRM and marketing-site build in GoHighLevel: pages, forms, pipelines and follow-up automation.",
     tools: ["GoHighLevel", "Forms", "Automation"] },
-  { id: "seminar-va", title: "VA Home Loan Buyer Seminar", client: "Columbus, GA veterans campaign", shot: "assets/web-seminar-va.jpg", kind: "campaign", kindLabel: "Event registration",
+  { id: "seminar-va", title: "VA Home Loan Buyer Seminar", client: "Columbus, GA veterans campaign", shot: "assets/web-seminar-va.webp", kind: "campaign", kindLabel: "Event registration",
     blurb: "Event registration page and seminar funnel for a veterans home-buying campaign.",
     tools: ["Eventbrite", "Seminar funnel", "Promotion"] },
-  { id: "seminar-fishing", title: "Fishing for Buyers & Sellers", client: "Atlanta real-estate seminar", shot: "assets/web-seminar-fishing.jpg", kind: "campaign", kindLabel: "Event registration",
+  { id: "seminar-fishing", title: "Fishing for Buyers & Sellers", client: "Atlanta real-estate seminar", shot: "assets/web-seminar-fishing.webp", kind: "campaign", kindLabel: "Event registration",
     blurb: "Real-estate seminar registration page and promotion for an Atlanta agent.",
     tools: ["Eventbrite", "Event page", "Promotion"] }
 ];
@@ -92,32 +91,32 @@ window.SITE_KINDS = [
 
 // Screens from inside client systems (from the 2026 PDF portfolio).
 window.SYSTEMS = [
-  { group: "ghl", title: "CRM dashboard", text: "Pipeline value, opportunities, contacts, tasks and appointment performance.", shot: "assets/ghl-dashboard.jpg" },
-  { group: "ghl", title: "Opportunity pipeline", text: "Stage-level sales and fulfillment tracking with customer records.", shot: "assets/ghl-pipeline.jpg" },
-  { group: "ghl", title: "Lead nurture workflow", text: "Lead capture, opportunity creation, booking and follow-up automation.", shot: "assets/ghl-nurture.jpg" },
-  { group: "api", title: "Webhook CRM routing", text: "Webhook intake with assignment, tagging, email and notification branches.", shot: "assets/ghl-webhook.jpg" },
-  { group: "ghl", title: "Voice AI receptionist", text: "Voice agent with call objectives, availability and response guidance.", shot: "assets/ghl-voice-ai.jpg" },
-  { group: "ghl", title: "AI client portal", text: "Onboarding progress, document uploads, training and launch readiness.", shot: "assets/ghl-portal.jpg" },
-  { group: "ghl", title: "A2P 10DLC registration", text: "Approved brand, campaign and phone registration for compliant SMS.", shot: "assets/ghl-a2p.jpg" },
-  { group: "ghl", title: "Digital course", text: "Modules, lessons, certificates, pricing and controlled student access.", shot: "assets/ghl-course.jpg" },
-  { group: "ghl", title: "Conversation AI assistant", text: "Website chat assistant with training, goals, rules and conversation logs.", shot: "assets/ghl-chat-ai.jpg" },
-  { group: "ghl", title: "Membership offer", text: "Recurring membership with courses, workshops, resources and checkout.", shot: "assets/ghl-membership.jpg" },
-  { group: "ghl", title: "Invoice management", text: "Draft, due, paid and overdue invoice monitoring and search.", shot: "assets/ghl-invoices.jpg" },
-  { group: "ghl", title: "Invoice builder", text: "Business details, payment options, line items, taxes and preview.", shot: "assets/ghl-invoice-builder.jpg" },
-  { group: "api", title: "Payment integrations", text: "Payment providers for invoices, orders, subscriptions and links.", shot: "assets/ghl-payments.jpg" },
-  { group: "api", title: "Multi-step automation", text: "Triggers, filters, routing, record updates and downstream actions in Zapier.", shot: "assets/zap-multistep.jpg" },
-  { group: "api", title: "Invoice and order orchestration", text: "Webhook intake, JavaScript parsing, formatting and order sync.", shot: "assets/zap-orders.jpg" },
-  { group: "api", title: "Developer API connector", text: "Private authentication, custom actions, mapping and API automation.", shot: "assets/zap-api-connector.jpg" },
-  { group: "zoho", title: "Financial dashboard", text: "Cash flow, receivables, payables, income and operating-expense reporting.", shot: "assets/zoho-dashboard.jpg" },
-  { group: "zoho", title: "Inventory items", text: "Warehouse inventory, stock status, pricing and reorder visibility.", shot: "assets/zoho-inventory.jpg" },
-  { group: "zoho", title: "Expense management", text: "Expense tracking across operating accounts and cost categories.", shot: "assets/zoho-expenses.jpg" },
-  { group: "zoho", title: "Payments received", text: "Customer payments, invoice application, references and unused balances.", shot: "assets/zoho-payments.jpg" },
-  { group: "zoho", title: "A/R aging", text: "Current and overdue balances organized for receivables monitoring.", shot: "assets/zoho-ar-aging.jpg" },
-  { group: "zoho", title: "Bank reconciliation", text: "Statement-to-book matching with categorized and unmatched transactions.", shot: "assets/zoho-bankrec.jpg" },
-  { group: "zoho", title: "Purchase orders", text: "Supplier orders, delivery dates, open commitments and billed values.", shot: "assets/zoho-po.jpg" },
-  { group: "zoho", title: "Inventory adjustments", text: "Quantity corrections, warehouse adjustments and value movements.", shot: "assets/zoho-adjustments.jpg" },
-  { group: "zoho", title: "Invoice creation", text: "Customer, payment terms, items, taxes, shipping and invoice preparation.", shot: "assets/zoho-invoice.jpg" },
-  { group: "zoho", title: "Profit and loss", text: "Period-based income and expense reporting with account detail.", shot: "assets/zoho-pnl.jpg" }
+  { group: "ghl", title: "CRM dashboard", text: "Pipeline value, opportunities, contacts, tasks and appointment performance.", shot: "assets/ghl-dashboard.webp" },
+  { group: "ghl", title: "Opportunity pipeline", text: "Stage-level sales and fulfillment tracking with customer records.", shot: "assets/ghl-pipeline.webp" },
+  { group: "ghl", title: "Lead nurture workflow", text: "Lead capture, opportunity creation, booking and follow-up automation.", shot: "assets/ghl-nurture.webp" },
+  { group: "api", title: "Webhook CRM routing", text: "Webhook intake with assignment, tagging, email and notification branches.", shot: "assets/ghl-webhook.webp" },
+  { group: "ghl", title: "Voice AI receptionist", text: "Voice agent with call objectives, availability and response guidance.", shot: "assets/ghl-voice-ai.webp" },
+  { group: "ghl", title: "AI client portal", text: "Onboarding progress, document uploads, training and launch readiness.", shot: "assets/ghl-portal.webp" },
+  { group: "ghl", title: "A2P 10DLC registration", text: "Approved brand, campaign and phone registration for compliant SMS.", shot: "assets/ghl-a2p.webp" },
+  { group: "ghl", title: "Digital course", text: "Modules, lessons, certificates, pricing and controlled student access.", shot: "assets/ghl-course.webp" },
+  { group: "ghl", title: "Conversation AI assistant", text: "Website chat assistant with training, goals, rules and conversation logs.", shot: "assets/ghl-chat-ai.webp" },
+  { group: "ghl", title: "Membership offer", text: "Recurring membership with courses, workshops, resources and checkout.", shot: "assets/ghl-membership.webp" },
+  { group: "ghl", title: "Invoice management", text: "Draft, due, paid and overdue invoice monitoring and search.", shot: "assets/ghl-invoices.webp" },
+  { group: "ghl", title: "Invoice builder", text: "Business details, payment options, line items, taxes and preview.", shot: "assets/ghl-invoice-builder.webp" },
+  { group: "api", title: "Payment integrations", text: "Payment providers for invoices, orders, subscriptions and links.", shot: "assets/ghl-payments.webp" },
+  { group: "api", title: "Multi-step automation", text: "Triggers, filters, routing, record updates and downstream actions in Zapier.", shot: "assets/zap-multistep.webp" },
+  { group: "api", title: "Invoice and order orchestration", text: "Webhook intake, JavaScript parsing, formatting and order sync.", shot: "assets/zap-orders.webp" },
+  { group: "api", title: "Developer API connector", text: "Private authentication, custom actions, mapping and API automation.", shot: "assets/zap-api-connector.webp" },
+  { group: "zoho", title: "Financial dashboard", text: "Cash flow, receivables, payables, income and operating-expense reporting.", shot: "assets/zoho-dashboard.webp" },
+  { group: "zoho", title: "Inventory items", text: "Warehouse inventory, stock status, pricing and reorder visibility.", shot: "assets/zoho-inventory.webp" },
+  { group: "zoho", title: "Expense management", text: "Expense tracking across operating accounts and cost categories.", shot: "assets/zoho-expenses.webp" },
+  { group: "zoho", title: "Payments received", text: "Customer payments, invoice application, references and unused balances.", shot: "assets/zoho-payments.webp" },
+  { group: "zoho", title: "A/R aging", text: "Current and overdue balances organized for receivables monitoring.", shot: "assets/zoho-ar-aging.webp" },
+  { group: "zoho", title: "Bank reconciliation", text: "Statement-to-book matching with categorized and unmatched transactions.", shot: "assets/zoho-bankrec.webp" },
+  { group: "zoho", title: "Purchase orders", text: "Supplier orders, delivery dates, open commitments and billed values.", shot: "assets/zoho-po.webp" },
+  { group: "zoho", title: "Inventory adjustments", text: "Quantity corrections, warehouse adjustments and value movements.", shot: "assets/zoho-adjustments.webp" },
+  { group: "zoho", title: "Invoice creation", text: "Customer, payment terms, items, taxes, shipping and invoice preparation.", shot: "assets/zoho-invoice.webp" },
+  { group: "zoho", title: "Profit and loss", text: "Period-based income and expense reporting with account detail.", shot: "assets/zoho-pnl.webp" }
 ];
 
 window.SYSTEM_GROUPS = [
@@ -224,7 +223,7 @@ window.CASES = [
     metrics: [
       { value: "6", label: "partner sites launched" },
       { value: "1", label: "shared template behind all of them" },
-      { value: "[x] days", label: "from signed partner to live site" }
+      { value: "0", label: "code changes to brand a new partner" }
     ],
     problem: "Every new partner (employers, associations, member groups) needed its own branded page and intake path, and each one was being built by hand. Launches were slow, sites drifted apart, and patient data from each one arrived in a slightly different shape.",
     approach: [
@@ -255,15 +254,15 @@ window.CASES = [
     summary: "A two-way bridge between the clinic's electronic health record and Salesforce, so appointments and orders show up where the care team already works.",
     categories: ["integrations", "salesforce"],
     released: "2026-10-28",
-    status: "Live in sandbox",
+    status: "Live",
     role: "Developer — API design, build, testing",
     timeline: "Oct 2026",
-    org: "Mino, telehealth clinic (sandbox, prod pending)",
+    org: "Mino, telehealth clinic (production org)",
     stack: ["Apex", "REST API", "Named Credentials", "Scheduled Apex", "Custom metadata"],
     metrics: [
       { value: "30 min", label: "sync interval" },
       { value: "0", label: "manual re-entry once live" },
-      { value: "[x]", label: "records synced in testing" }
+      { value: "733", label: "appointments synced, 358 patients matched" }
     ],
     problem: "Staff were copying appointment and order details by hand from the EHR into Salesforce. That was slow, and every copy was a chance for a typo in a patient record.",
     approach: [
@@ -279,10 +278,11 @@ window.CASES = [
       { type: "Tests", name: "Mocked API tests covering success, timeout and bad data" }
     ],
     outcome: [
-      "Appointments and orders sync automatically in sandbox.",
+      "Appointments and orders sync automatically, tested in a sandbox first.",
       "Product mapping lives in configuration, so new SKUs don't need a deploy.",
-      "Ready for production once the clinic issues the live API key."
+      "Running in production twice an hour, with refill checks every evening."
     ],
+    code: { lang: "Apex", title: "Paging through the EHR API", src: "// Follows the EHR's \"next\" links until every page is read.\npublic static List<Object> getAll(String path, Integer maxPages) {\n    List<Object> results = new List<Object>();\n    String next = path + (path.contains('?') ? '&' : '?') + 'limit=' + PAGE_SIZE;\n    Integer pages = 0;\n    while (next != null && pages < maxPages) {\n        Map<String, Object> page = get(next);   // Named Credential callout\n        List<Object> rows = (List<Object>) page.get('results');\n        if (rows != null) results.addAll(rows);\n        next = (String) page.get('next');\n        pages++;\n    }\n    return results;\n}" },
     lesson: "Sync jobs that hold locks on a class block deployments of that class. Pausing and restarting jobs became part of the deploy checklist."
   },
   {
@@ -300,7 +300,7 @@ window.CASES = [
     stack: ["Record-triggered Flows", "Scheduled Apex", "List views", "Reports & dashboards"],
     metrics: [
       { value: "3", label: "automations shipped" },
-      { value: "[x] min", label: "target first-response time" },
+      { value: "Hourly", label: "stale-lead and order sweep" },
       { value: "0", label: "duplicate sends after launch" }
     ],
     problem: "New leads sometimes sat untouched, and orders that stalled halfway (missing payment, missing details) had no owner. The team only noticed when a patient complained.",
@@ -415,7 +415,7 @@ window.CASES = [
     metrics: [
       { value: "1", label: "tab for every QR code" },
       { value: "Every", label: "scan counted" },
-      { value: "[x]", label: "codes in use" }
+      { value: "11", label: "codes in use" }
     ],
     problem: "Printed QR codes pointed straight at websites, so nobody knew which flyer or event worked.",
     approach: [
@@ -432,6 +432,7 @@ window.CASES = [
       "Every printed code is now measurable.",
       "Destinations can change without reprinting anything."
     ],
+    code: { lang: "Apex", title: "The redirect that counts every scan", src: "// Logs the scan, then returns where to send the person.\npublic static String track(String code, String userAgent) {\n    if (String.isBlank(code)) return FALLBACK_URL;\n    List<QR_Code__c> codes = [\n        SELECT Id, Destination_URL__c, Active__c\n        FROM QR_Code__c WHERE Code__c = :code.trim() LIMIT 1\n    ];\n    if (codes.isEmpty() || !codes[0].Active__c) return FALLBACK_URL;\n    try {\n        insert new QR_Code_Scan__c(\n            QR_Code__c = codes[0].Id,\n            Scanned_At__c = System.now(),\n            Is_Bot__c = isBot(userAgent)   // link previews aren't counted\n        );\n    } catch (Exception e) {\n        // logging never blocks the redirect\n    }\n    return codes[0].Destination_URL__c;\n}" },
     lesson: "A redirect you control is worth more than a direct link. It gives you data and lets you fix mistakes after printing."
   },
   {
@@ -512,37 +513,37 @@ window.SERVICES = [
     id: "build", title: "Salesforce development",
     blurb: "Custom objects, flows, Apex and Lightning components that fit how your team works.",
     deliverables: ["Data model and page layouts", "Record-triggered and scheduled flows", "Apex classes with tests", "Experience Cloud portals", "Sandbox to production deployment"],
-    timeline: "[2–6 weeks]", cases: ["lead-automation", "qr-tracking", "partner-portals"]
+    timeline: "2–6 weeks", cases: ["lead-automation", "qr-tracking", "partner-portals"]
   },
   {
     id: "ghl", title: "GoHighLevel systems",
     blurb: "Sub-accounts built end to end and tied to real customer journeys, with compliant messaging from day one.",
     deliverables: ["Pipelines, stages and custom fields", "Websites, funnels and forms", "Calendars and booking", "Email and SMS workflows", "Voice and conversation AI", "A2P 10DLC and Trust Center"],
-    timeline: "[1–4 weeks]", cases: []
+    timeline: "1–4 weeks", cases: []
   },
   {
     id: "web", title: "Website design & development",
     blurb: "Custom websites, funnels and landing pages, designed for the brand and wired into your CRM.",
     deliverables: ["Design direction and layout", "Responsive build", "Forms connected to your CRM", "Custom domain and SSL", "Speed and SEO basics"],
-    timeline: "[1–4 weeks per site]", cases: ["partner-portals", "intake-forms"]
+    timeline: "1–4 weeks per site", cases: ["partner-portals", "intake-forms"]
   },
   {
     id: "integrations", title: "API integrations",
     blurb: "Connect your CRM to your EHR, accounting, store, phone system or anything else with an API.",
     deliverables: ["API mapping document", "Secure auth (Named Credentials, private apps)", "Webhooks and scheduled sync", "Zapier and Make with code steps", "Error logging and alerts", "Runbook for your team"],
-    timeline: "[1–8 weeks]", cases: ["ehr-sync", "intake-forms", "sms-guardrails"]
+    timeline: "1–8 weeks", cases: ["ehr-sync", "intake-forms", "sms-guardrails"]
   },
   {
     id: "finance", title: "Finance operations",
     blurb: "Accounts payable and expense management kept clean, current and audit-ready.",
     deliverables: ["Invoice intake and GL coding", "Approval routing and vendor payments", "Bank reconciliation", "Month-end close support", "W-9 and 1099 support", "Power BI and Excel reporting"],
-    timeline: "[Monthly retainer]", cases: []
+    timeline: "Monthly retainer", cases: []
   },
   {
     id: "support", title: "Ongoing admin & support",
     blurb: "A dependable person for fixes, small changes, user questions and safe releases.",
     deliverables: ["Monthly hours block", "Fix and change requests", "Release checks before every deploy", "User training sessions"],
-    timeline: "[Monthly retainer]", cases: []
+    timeline: "Monthly retainer", cases: []
   }
 ];
 
