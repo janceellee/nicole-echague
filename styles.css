@@ -522,3 +522,10 @@ a.tile { text-decoration: none; color: inherit; }
 @media (prefers-reduced-motion: reduce) { .wire::after { animation: none; top: 40%; } }
 
 .code-sample { background: var(--bg-2); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 18px 20px; overflow-x: auto; font: 13px/1.6 var(--mono, "JetBrains Mono", monospace); color: var(--ink); max-width: 100%; }
+
+/* Phones: comfortable tap targets and readable small text */
+@media (max-width: 640px) {
+  a.tag, .proof a, main a.tag { min-height: 40px; display: inline-flex; align-items: center; }
+  .components table td, .components table th { font-size: 14px !important; }
+  .clock-cap { font-size: 13px; }
+}
