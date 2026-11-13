@@ -27,6 +27,8 @@
 }
 
 * { box-sizing: border-box; }
+/* Filters and toggles use the hidden attribute; make sure no card style can override it. */
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0; color: var(--ink); font: 16.5px/1.65 var(--sans); -webkit-font-smoothing: antialiased;

@@ -4,7 +4,7 @@ window.SITE = {
   name: "Nicole Echague",
   fullName: "Nicole Jancelle Echague",
   short: "Nicole",
-  role: "Salesforce · GoHighLevel · Web Developer · API Integrations",
+  role: "Full-Stack Developer · High-Performance Websites · Salesforce · API Integrations",
   location: "Philippines",
   upwork: "upwork.com/freelancers/nicolejancellee",
   github: "github.com/janceellee",
@@ -16,7 +16,7 @@ window.PILLARS = [
   { id: "salesforce", title: "Salesforce", kicker: "CRM development",
     text: "Custom objects, flows, Apex and Experience Cloud portals, built sandbox-first and shipped to production.",
     points: ["Flows, Apex and Lightning components", "Experience Cloud partner portals", "Reports, dashboards and team training"],
-    link: "work.html", linkLabel: "Salesforce case studies" },
+    link: "work.html", linkLabel: "Salesforce builds" },
   { id: "ghl", title: "GoHighLevel", kicker: "Marketing CRM",
     text: "Sub-accounts built end to end: pipelines, websites and funnels, AI agents, payments and compliant A2P messaging.",
     points: ["Pipelines, calendars and workflows", "Voice and conversation AI", "A2P 10DLC and Trust Center"],
@@ -152,7 +152,7 @@ window.ENGAGEMENTS = [
     result: "GoHighLevel and the platform's other tools working from the same synced data." },
   { role: "Salesforce Developer & Systems Specialist", org: "Mino", when: "2026 – Present",
     scope: "Salesforce build-out for a physician-led telehealth clinic in New York: the move onto Salesforce, partner websites and portals, integrations and day-to-day automation.",
-    did: ["Led the move onto Salesforce: planned the cutover, trained the team and handled go-live week.", "Designed and launched co-branded partner websites and portals on Experience Cloud, plus the company site and campaign pages.", "Built API integrations with the EHR, phone system, online store and fulfillment partner, and automated lead follow-up, order flags and texting rules."],
+    did: ["Led the move onto Salesforce: planned the cutover, trained the team and handled go-live week.", "Designed and launched co-branded partner websites and portals on Experience Cloud, plus the company site and campaign pages.", "Built API integrations with the EHR, phone system, online store and fulfillment partner, and automated lead follow-up, order flags and texting rules.", "Built a self-cleaning task queue and email alerts for the concierge team, plus a Do Not Disturb setting that every automatic text and email respects."],
     tools: ["Salesforce", "Apex", "Experience Cloud", "Flows", "REST APIs", "Zapier"],
     result: "One Salesforce org running intake, partners, orders and follow-up, with every change tested in a sandbox first." },
   { role: "Operations & Finance Administrator", org: "Bermuda Bulk Gases", when: "Mar 2025 – Sep 2026",
@@ -435,6 +435,43 @@ window.CASES = [
     lesson: "A redirect you control is worth more than a direct link. It gives you data and lets you fix mistakes after printing."
   },
   {
+    id: "concierge-queue",
+    title: "Concierge task queue and alerts",
+    kicker: "Apex triggers · scheduled jobs · email",
+    summary: "A task list that closes finished work on its own, plus email alerts that tell the care team the moment a new patient or an overdue follow-up needs them.",
+    categories: ["automation", "salesforce"],
+    released: "2026-11-09",
+    status: "Live",
+    role: "Developer — rules, build, rollout",
+    timeline: "Nov 2026",
+    org: "Mino, telehealth clinic (production org)",
+    stack: ["Apex triggers", "Scheduled Apex", "Email services", "Activity logging"],
+    metrics: [
+      { value: "100+", label: "stale tasks closed on the first run" },
+      { value: "15 min", label: "alert check interval" },
+      { value: "1", label: "DND switch every sender respects" }
+    ],
+    problem: "The concierge task list filled up with reminders for appointments that had already happened and missed calls that had already been returned, so real work got lost in the noise. New patients also waited until someone happened to open Salesforce.",
+    approach: [
+      "Agreed with the team on when each kind of task is truly done: the appointment has passed, the patient moved on, or the call was returned.",
+      "Built triggers and an hourly sweep that close those tasks and leave a note saying why.",
+      "Added email alerts for new patients, logged on each patient record so the history stays in one place.",
+      "Added a Do Not Disturb field that every automatic text and email checks before sending."
+    ],
+    build: [
+      { type: "Apex", name: "Task auto-close triggers and hourly sweep" },
+      { type: "Apex", name: "New-patient email alerts, logged as activities" },
+      { type: "Field", name: "Do Not Disturb, checked by every sender" },
+      { type: "Fix", name: "Flag timestamps so alerts show the real waiting time" }
+    ],
+    outcome: [
+      "The task list shows only work that is still owed.",
+      "The team hears about new patients within minutes.",
+      "Patients who ask not to be contacted are skipped automatically."
+    ],
+    lesson: "If a timer falls back to \"last modified\", every edit resets it. Stamp the moment that matters in its own field."
+  },
+  {
     id: "order-error-report",
     title: "Daily failed-order report",
     kicker: "Zapier · Google Sheets",
@@ -513,6 +550,7 @@ window.SKILLS = [
   { group: "Salesforce", items: [
     { name: "Apex", cases: ["ehr-sync", "lead-automation", "sms-guardrails", "partner-portals"] },
     { name: "Flows", cases: ["lead-automation"] },
+    { name: "Triggers & scheduled jobs", cases: ["concierge-queue", "lead-automation"] },
     { name: "Lightning Web Components", cases: ["partner-portals"] },
     { name: "Experience Cloud", cases: ["partner-portals", "qr-tracking"] },
     { name: "Visualforce", cases: ["qr-tracking", "intake-forms"] },

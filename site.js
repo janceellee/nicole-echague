@@ -78,7 +78,7 @@
           <a class="logo" href="index.html"><span class="mark" aria-hidden="true">NE</span>${esc(S.name)}</a>
           <p class="muted measure">${esc(S.role)}. Websites, funnels, CRM systems and the integrations between them.</p>
         </div>
-        <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="work.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="work.html">Builds</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div><h4>Elsewhere</h4><ul>
           <li>${ext(S.upwork)}</li><li>${ext(S.github)}</li>
         </ul></div>
@@ -121,7 +121,7 @@
       <h3>${esc(c.title)}</h3>
       <p>${esc(c.summary)}</p>
       <div class="tags">${c.stack.slice(0, 4).map(s => `<span class="tag">${esc(s)}</span>`).join("")}</div>
-      <span class="more">Read the case study <span class="arr">→</span></span>
+      <span class="more">See the build <span class="arr">→</span></span>
     </a>`;
 
   const sysCard = (s, i) => `
@@ -282,7 +282,7 @@
       main.innerHTML = `
         <div class="wrap">
           <div class="case-hero">
-            <div class="crumbs"><a href="work.html">Case studies</a> / ${esc(c.kicker)}</div>
+            <div class="crumbs"><a href="work.html">Builds</a> / ${esc(c.kicker)}</div>
             <div class="btn-row" style="align-items:center">${pill(c.status)}<span class="mono muted">Released ${fmtDate(c.released)}, ${c.released.slice(0, 4)}</span></div>
             <h1 class="rise">${esc(c.title)}</h1>
             <p class="hero-lede measure rise d1">${esc(c.summary)}</p>
@@ -316,7 +316,7 @@
               </dl>
             </aside>
           </div>
-          <nav class="case-nav" aria-label="More case studies">
+          <nav class="case-nav" aria-label="More builds">
             <a class="card case-card spot" href="${caseUrl(prev.id)}"><span class="mono muted">← Previous</span><h3>${esc(prev.title)}</h3></a>
             <a class="card case-card spot next" href="${caseUrl(next.id)}"><span class="mono muted">Next →</span><h3>${esc(next.title)}</h3></a>
           </nav>
