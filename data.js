@@ -3,7 +3,7 @@ window.SITE = {
   name: "Nicole Echague",
   fullName: "Nicole Jancelle Echague",
   short: "Nicole",
-  role: "Full-Stack Developer · High-Performance Websites · Salesforce · API Integrations",
+  role: "Full-Stack Developer · Automation Expert · High-Performance Websites · API Integrations",
   location: "Philippines",
   upwork: "upwork.com/freelancers/nicolejancellee",
   github: "github.com/janceellee",
@@ -24,9 +24,9 @@ window.PILLARS = [
     text: "Brand-matched websites, funnels and landing pages, connected to a CRM from the first form.",
     points: ["Custom HTML, CSS and JavaScript", "GoHighLevel, WordPress and site builders", "Event and campaign pages"],
     link: "websites.html", linkLabel: "All websites" },
-  { id: "api", title: "API integrations", kicker: "Connect everything",
-    text: "REST APIs, webhooks and Zapier code steps that move data between CRMs, EHRs, accounting and order systems.",
-    points: ["REST APIs, webhooks and Named Credentials", "Zapier, Make and custom code steps", "Two-way sync with error handling"],
+  { id: "api", title: "Automation & APIs", kicker: "Automation expert",
+    text: "End-to-end automations that run the business on their own: lead follow-up, alerts, order flags and syncs between CRMs, EHRs, accounting and order systems.",
+    points: ["Triggers, scheduled jobs and workflows", "REST APIs, webhooks, Zapier and Make", "Self-healing syncs with error handling"],
     link: "systems.html#api", linkLabel: "See an integration" }
 ];
 
@@ -192,7 +192,7 @@ window.ENGAGEMENTS = [
 ];
 
 window.EDUCATION = [
-  { title: "MBA", org: "National Dong Hwa University", note: "University Scholar" },
+  { title: "MBA", org: "Taiwan", note: "University Scholar" },
   { title: "BSBA, Financial Management", org: "Far Eastern University", note: "City Scholar · LSEG Scholar" },
   { title: "Certified Financial Information Associate", org: "February 2025", note: "Certification" },
   { title: "TOEIC 965", org: "English proficiency", note: "Certification" }

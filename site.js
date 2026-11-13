@@ -32,7 +32,7 @@
 
   // Header
   const links = [
-    ["home", "index.html", "Home"], ["websites", "websites.html", "Websites"], ["systems", "systems.html", "Systems & APIs"],
+    ["home", "index.html", "Home"], ["websites", "websites.html", "Websites"], ["work", "work.html", "Builds"], ["systems", "systems.html", "Systems & APIs"],
     ["skills", "skills.html", "Skills"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
   ];
   const activeKey = page;
@@ -45,6 +45,7 @@
       <a class="logo" href="index.html" aria-label="${esc(S.name)}, home">${wordmark}</a>
       <nav class="nav" id="site-nav" aria-label="Main">
         ${links.map(([k, href, label]) => `<a href="${href}"${k === activeKey ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
+        <a class="nav-contact" href="contact.html"${activeKey === "contact" ? ' aria-current="page"' : ""}>Contact · Work with me</a>
       </nav>
       <div class="header-actions">
         <a class="btn btn-primary magnetic" href="contact.html">Work with me</a>

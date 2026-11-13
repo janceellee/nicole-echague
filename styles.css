@@ -449,7 +449,7 @@ a.inline { color: var(--accent); }
 .lightbox { position: fixed; inset: 0; z-index: 70; background: rgba(5,5,8,.94); display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; align-items: center; padding: calc(56px + env(safe-area-inset-top, 0px)) max(8px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); }
 .lightbox[hidden] { display: none; }
 .lightbox figure { margin: 0; display: flex; flex-direction: column; gap: 14px; align-items: center; min-width: 0; max-height: 100%; }
-.lightbox img { max-height: calc(100vh - 200px); width: auto; max-width: 100%; border-radius: 12px; background: #fff; }
+.lightbox img { max-height: calc(100vh - 200px); max-height: calc(100dvh - 200px); width: auto; max-width: 100%; border-radius: 12px; background: #fff; }
 .lightbox figcaption { color: var(--ink); text-align: center; display: flex; flex-direction: column; gap: 2px; }
 .lightbox figcaption span { color: var(--muted); font-size: .92rem; }
 .lightbox figcaption em { font-style: normal; font-family: var(--mono); color: var(--faint); font-size: .76rem; }
@@ -529,3 +529,6 @@ a.tile { text-decoration: none; color: inherit; }
   .components table td, .components table th { font-size: 14px !important; }
   .clock-cap { font-size: 13px; }
 }
+
+.nav .nav-contact { display: none; }
+@media (max-width: 960px) { .nav .nav-contact { display: block; color: var(--accent); } }
