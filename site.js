@@ -79,8 +79,8 @@
           <a class="logo" href="index.html"><span class="mark" aria-hidden="true">NE</span>${esc(S.name)}</a>
           <p class="muted measure">${esc(S.role)}. Websites, funnels, CRM systems and the integrations between them.</p>
         </div>
-        <div><h4>Pages</h4><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="work.html">Builds</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Elsewhere</h4><ul>
+        <div><h3>Pages</h3><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h3>Elsewhere</h3><ul>
           <li>${ext(S.upwork)}</li><li>${ext(S.github)}</li>
         </ul></div>
       </div>
@@ -581,4 +581,22 @@
     });
     b.addEventListener("pointerleave", () => { b.style.transform = ""; });
   });
+})();
+
+// Keep heading levels in order for screen readers and search engines:
+// if an h3 follows the page h1 with no h2 between, add a hidden h2 label.
+(function fixHeadingOrder() {
+  const labels = { websites: "Websites", work: "Builds", skills: "Skills by area", services: "Services", systems: "Systems and integrations" };
+  const main = document.querySelector("main");
+  const label = main && labels[main.dataset.page];
+  if (!label) return;
+  const heads = [...main.querySelectorAll("h1, h2, h3")];
+  const i = heads.findIndex(h => h.tagName === "H1");
+  const next = heads[i + 1];
+  if (i < 0 || !next || next.tagName !== "H3") return;
+  let block = next;
+  while (block.parentElement && block.parentElement !== main && !block.parentElement.contains(heads[i])) block = block.parentElement;
+  const h2 = document.createElement("h2");
+  h2.className = "sr-only"; h2.textContent = label;
+  block.parentElement.insertBefore(h2, block);
 })();

@@ -7,7 +7,7 @@ window.SITE = {
   location: "Philippines",
   upwork: "upwork.com/freelancers/nicolejancellee",
   github: "github.com/janceellee",
-  availability: "Open to contract and full-time work with US teams"
+  availability: "Remote from the Philippines for US and Canadian teams, working EST to PST hours"
 };
 
 // The four things Nicole leads with. Each links to the work that proves it.
