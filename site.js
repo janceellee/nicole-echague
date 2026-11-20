@@ -32,8 +32,8 @@
 
   // Header
   const links = [
-    ["home", "index.html", "Home"], ["websites", "websites.html", "Websites"], ["work", "work.html", "Builds"], ["systems", "systems.html", "Systems & APIs"],
-    ["skills", "skills.html", "Skills"], ["finance", "finance.html", "Finance"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
+    ["home", "index.html", "Home"], ["finance", "finance.html", "Finance"], ["websites", "websites.html", "Websites"], ["work", "work.html", "Builds"], ["systems", "systems.html", "Systems & APIs"],
+    ["skills", "skills.html", "Skills"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
   ];
   const activeKey = page;
   const wordmark = `<span class="mark" aria-hidden="true">NE</span><span class="full">${esc(S.name)}</span>`;
