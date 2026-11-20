@@ -33,7 +33,7 @@
   // Header
   const links = [
     ["home", "index.html", "Home"], ["websites", "websites.html", "Websites"], ["work", "work.html", "Builds"], ["systems", "systems.html", "Systems & APIs"],
-    ["skills", "skills.html", "Skills"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
+    ["skills", "skills.html", "Skills"], ["finance", "finance.html", "Finance"], ["services", "services.html", "Services"], ["about", "about.html", "About"]
   ];
   const activeKey = page;
   const wordmark = `<span class="mark" aria-hidden="true">NE</span><span class="full">${esc(S.name)}</span>`;
@@ -364,6 +364,12 @@
         </div>`).join("");
     },
 
+    finance() {
+      document.getElementById("fin-grid").innerHTML = window.SYSTEMS.map((x, i) => x.group === "zoho" ? sysCard(x, i) : "").join("");
+      document.getElementById("fin-roles").innerHTML = window.ENGAGEMENTS.filter(e => e.finance).map(e => `
+        <div class="card reveal"><span class="eyebrow">${esc(e.when)}</span><h3>${esc(e.role)}</h3><p><b>${esc(e.org)}</b> · ${esc(e.scope)}</p><ul>${e.did.map(d => `<li>${esc(d)}</li>`).join("")}</ul></div>`).join("");
+    },
+
     about() {
       document.getElementById("timeline").innerHTML = runLog(ENGS) + ENGS.map(tlItem).join("");
       document.getElementById("toggle-all").addEventListener("click", ev => {
@@ -586,7 +592,7 @@
 // Keep heading levels in order for screen readers and search engines:
 // if an h3 follows the page h1 with no h2 between, add a hidden h2 label.
 (function fixHeadingOrder() {
-  const labels = { websites: "Websites", work: "Builds", skills: "Skills by area", services: "Services", systems: "Systems and integrations" };
+  const labels = { websites: "Websites", work: "Builds", skills: "Skills by area", services: "Services", finance: "Finance", systems: "Systems and integrations" };
   const main = document.querySelector("main");
   const label = main && labels[main.dataset.page];
   if (!label) return;
