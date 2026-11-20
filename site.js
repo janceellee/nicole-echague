@@ -138,9 +138,10 @@
   const ym = str => { const parts = str.trim().split(" "), y = +parts.pop(), m = parts[0]; return y * 12 + (m ? months.indexOf(m.slice(0, 3)) : 0); };
   const running = e => /present/i.test(e.when);
   // Ongoing roles come first, then everything else by start month.
-  const startOf = e => ym(e.when.split(" – ")[0]) + (running(e) ? 1e6 : 0);
+  const span = e => e.when.split(" · ")[0];
+  const startOf = e => ym(span(e).split(" – ")[0]) + (running(e) ? 1e6 : 0);
   const runLength = e => {
-    const [a, b] = e.when.split(" – ");
+    const [a, b] = span(e).split(" – ");
     if (!b || running(e) || !/ /.test(a)) return "";
     const n = ym(b) - ym(a) + 1;
     return n >= 12 ? `${Math.floor(n / 12)}y ${n % 12 ? (n % 12) + "mo" : ""}`.trim() : `${n}mo`;
