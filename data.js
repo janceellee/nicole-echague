@@ -3,7 +3,7 @@ window.SITE = {
   name: "Nicole Echague",
   fullName: "Nicole Jancelle Echague",
   short: "Nicole",
-  role: "Full-Stack Developer · Automation Expert · High-Performance Websites · API Integrations",
+  role: "Full-Stack Developer · Finance & Accounting Specialist · Automation Expert · API Integrations",
   location: "Philippines",
   upwork: "upwork.com/freelancers/nicolejancellee",
   github: "github.com/janceellee",
@@ -545,6 +545,12 @@ window.CASES = [
 
 window.SERVICES = [
   {
+    id: "finance", title: "Finance & accounting operations",
+    blurb: "Bookkeeping, AP/AR, reconciliations, month-end close and reporting in QuickBooks, Xero, Zoho Books or your ERP, kept clean, current and audit-ready.",
+    deliverables: ["Bookkeeping and journal entries", "Invoice intake, GL coding and vendor payments", "Bank, credit card and payment-gateway reconciliation", "Month-end close support", "Budget-versus-actual and cash flow reporting", "Power BI and Excel dashboards", "Finance workflow automation"],
+    timeline: "Monthly retainer", cases: []
+  },
+  {
     id: "build", title: "Salesforce development",
     blurb: "Custom objects, flows, Apex and Lightning components that fit how your team works.",
     deliverables: ["Data model and page layouts", "Record-triggered and scheduled flows", "Apex classes with tests", "Experience Cloud portals", "Sandbox to production deployment"],
@@ -567,12 +573,6 @@ window.SERVICES = [
     blurb: "Connect your CRM to your EHR, accounting, store, phone system or anything else with an API.",
     deliverables: ["API mapping document", "Secure auth (Named Credentials, private apps)", "Webhooks and scheduled sync", "Zapier and Make with code steps", "Error logging and alerts", "Runbook for your team"],
     timeline: "1–8 weeks", cases: ["ehr-sync", "intake-forms", "sms-guardrails"]
-  },
-  {
-    id: "finance", title: "Finance operations",
-    blurb: "Accounts payable and expense management kept clean, current and audit-ready.",
-    deliverables: ["Invoice intake and GL coding", "Approval routing and vendor payments", "Bank reconciliation", "Month-end close support", "W-9 and 1099 support", "Power BI and Excel reporting"],
-    timeline: "Monthly retainer", cases: []
   },
   {
     id: "support", title: "Ongoing admin & support",

@@ -77,7 +77,7 @@
       <div class="foot-grid">
         <div class="stack">
           <a class="logo" href="index.html"><span class="mark" aria-hidden="true">NE</span>${esc(S.name)}</a>
-          <p class="muted measure">${esc(S.role)}. Websites, funnels, CRM systems and the integrations between them.</p>
+          <p class="muted measure">${esc(S.role)}. Finance and accounting, websites, CRM systems and the integrations between them.</p>
         </div>
         <div><h3>Pages</h3><ul>${links.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}<li><a href="contact.html">Contact</a></li></ul></div>
         <div><h3>Elsewhere</h3><ul>
