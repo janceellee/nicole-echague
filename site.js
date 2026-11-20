@@ -248,7 +248,7 @@
           `<span class="fan-label"><span>${esc(w.title)}</span><span>${esc(w.kindLabel)}</span></span><button class="browser"`);
       }).join("");
       document.getElementById("exp-rail").innerHTML = runLog(ENGS) + ENGS.slice(0, 4).map(tlItem).join("");
-      const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "NetSuite", "HTML/CSS/JS", "WordPress", "Zoho Books", "Power BI", "Claude"];
+      const stack = ["Salesforce", "Apex", "Flows", "Experience Cloud", "GoHighLevel", "Zapier", "Make", "REST APIs", "Webhooks", "NetSuite", "QuickBooks", "Xero", "Zoho Books", "SAP S/4HANA", "Excel & VBA", "Power BI", "HTML/CSS/JS", "WordPress", "Claude"];
       const row = stack.map(t => `<span>${esc(t)}</span>`).join("");
       document.getElementById("ticker").innerHTML = row + row;
       document.getElementById("featured").innerHTML = ["ehr-sync", "partner-portals", "lead-automation"].map(id => caseCard(byId[id])).join("");

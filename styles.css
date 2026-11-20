@@ -157,10 +157,11 @@ a:hover .arr { transform: translateX(4px); }
 .badges { position: absolute; inset: 0; animation: spin 50s linear infinite; }
 .badges span { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px; border-radius: 50%; display: grid; place-items: center; font: 700 .68rem var(--mono); background: var(--raised); border: 1px solid var(--line); box-shadow: var(--shadow); transform: rotate(var(--a)) translateY(calc(min(420px, 100vw - 48px) * -.5)) rotate(calc(var(--a) * -1)); }
 .badges span b { display: block; animation: spin 50s linear infinite reverse; font-weight: 700; }
-.badges span:nth-child(1) { --a: 20deg; color: var(--blue); }
-.badges span:nth-child(2) { --a: 110deg; color: var(--accent); }
-.badges span:nth-child(3) { --a: 200deg; color: var(--pink); }
-.badges span:nth-child(4) { --a: 290deg; color: var(--mint); }
+.badges span:nth-child(1) { --a: 54deg; color: var(--blue); }
+.badges span:nth-child(2) { --a: 126deg; color: var(--accent); }
+.badges span:nth-child(3) { --a: 198deg; color: var(--pink); }
+.badges span:nth-child(4) { --a: 270deg; color: var(--mint); }
+.badges span:nth-child(5) { --a: 342deg; color: var(--accent); }
 @keyframes spin { to { transform: rotate(360deg); } }
 .orbit .status { position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%); z-index: 2; font-family: var(--mono); font-size: .74rem; background: var(--raised); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; white-space: nowrap; display: flex; gap: 8px; align-items: center; box-shadow: var(--shadow); }
 .orbit .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); animation: ping 2s infinite; }

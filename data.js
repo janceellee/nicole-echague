@@ -227,8 +227,8 @@ window.ENGAGEMENTS = [
 ];
 
 window.EDUCATION = [
-  { title: "MBA", org: "Taiwan", note: "University Scholar" },
-  { title: "BSBA, Financial Management", org: "Far Eastern University", note: "City Scholar · LSEG Scholar" },
+  { title: "MBA", org: "Master of Business Administration", note: "Graduate degree" },
+  { title: "BSBA, Financial Management", org: "Bachelor of Science in Business Administration", note: "Undergraduate degree" },
   { title: "Certified Financial Information Associate", org: "February 2025", note: "Certification" },
   { title: "TOEIC 965", org: "English proficiency", note: "Certification" }
 ];
