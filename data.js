@@ -581,7 +581,7 @@ window.SKILLS = [
     { name: "Custom domains & DNS", cases: ["partner-portals"] }
   ]},
   { group: "Finance & data", items: [
-    { name: "QuickBooks Online & Zoho Books", cases: [] },
+    { name: "QuickBooks Online, Xero & Zoho Books", cases: [] },
     { name: "AP, reconciliation & month-end close", cases: [] },
     { name: "Advanced Excel & VBA", cases: [] },
     { name: "Power BI dashboards", cases: [] }
